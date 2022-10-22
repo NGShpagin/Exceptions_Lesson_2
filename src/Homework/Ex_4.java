@@ -9,10 +9,21 @@ import java.util.Scanner;
 
 public class Ex_4 {
     public static void main(String[] args) {
-        System.out.println(printString());
+        System.out.println(printStringException());
     }
 
-    public static String printString() {
+    public static String printStringException() {
+        String string = null;
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter a string: ");
+        string = scanner.nextLine();
+        if (string.isEmpty()) {
+            throw new RuntimeException("You need to print smth");
+        }
+        return string;
+    }
+
+    public static String printStringIf() {
         boolean flag;
         String string = null;
         do {
